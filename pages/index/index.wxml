@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <input bindinput="bindKeyInput" placeholder="请输入邮政号码！！！" />
+  <button size="default" type="primary"  bindtap="btnClick"> 查询 </button>
+  <view wx:if="{{info.msg == 'success'}}"> 
+    <view>地址：{{info.result.province}}-{{info.result.city}}-{{info.result.district}}</view>
+    <view wx:for="{{info.result.address}}">
+      {{item}}
+    </view> 
+  </view>
+  <view wx:else> 
+    <view>{{info.msg}} </view>
+  </view>
+  
+</view>
